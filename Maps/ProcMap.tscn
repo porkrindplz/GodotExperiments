@@ -6,6 +6,9 @@
 
 [node name="ProceduralTileMap" type="Node2D"]
 script = ExtResource("1_pogkv")
+_xSize = 128
+_ySize = 128
+_fractal_gain = 4.0
 
 [node name="Walkable" type="TileMap" parent="."]
 unique_name_in_owner = true

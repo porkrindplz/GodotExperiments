@@ -7,6 +7,8 @@ class_name ProcMapGen
 @onready var non_walkable: TileMap = %NonWalkable
 
 #Generation Dials
+@export var _xSize = 49
+@export var _ySize = 49
 @export var _fractal_octaves: int = 2
 @export var _fractal_gain: float = 8
 @export var _fractal_ping_pong_strength: float = 0.15
@@ -36,8 +38,8 @@ func _ready():
 	_noise.fractal_ping_pong_strength = _fractal_ping_pong_strength # original 0.15
 	_noise.fractal_lacunarity = _fractal_lacunarity # original 1.4
 	
-	for i in range(39):
-		for j in range( - 128, 127):
+	for i in range(-_xSize,_xSize-1):
+		for j in range( - _ySize, _ySize-1):
 			_val = _noise.get_noise_2d(i, j)
 			if _val < - 0.2:
 				_max += 1

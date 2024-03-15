@@ -1,6 +1,5 @@
-[gd_scene load_steps=15 format=3 uid="uid://beq85xrl5rqg5"]
+[gd_scene load_steps=14 format=3 uid="uid://beq85xrl5rqg5"]
 
-[ext_resource type="PackedScene" uid="uid://cncdo32ejumvr" path="res://Maps/map.tscn" id="1_e81jf"]
 [ext_resource type="PackedScene" uid="uid://bmfknmrrywcof" path="res://Characters/Player/player.tscn" id="2_ueec3"]
 [ext_resource type="PackedScene" uid="uid://dowqdfahre34a" path="res://Camera/camera.tscn" id="3_awls0"]
 [ext_resource type="Script" path="res://Camera/camera.gd" id="3_gprbs"]
@@ -16,10 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://h8417wbm6xf3" path="res://Maps/ProcMap.tscn" id="13_ofmqc"]
 
 [node name="Main" type="Node2D"]
-
-[node name="Map" parent="." instance=ExtResource("1_e81jf")]
-visible = false
-z_index = -1
 
 [node name="Camera" parent="." instance=ExtResource("3_awls0")]
 script = ExtResource("3_gprbs")
@@ -92,3 +87,5 @@ offset_bottom = 66.0
 
 [node name="ProceduralTileMap" parent="." instance=ExtResource("13_ofmqc")]
 z_index = -1
+_fractal_gain = 8.0
+_fractal_lacunarity = 4.0

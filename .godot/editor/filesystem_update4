@@ -6,3 +6,5 @@ res://Maps/TileSets/Walkable.tres
 res://Maps/TileSets/Obstacles.tres
 res://Characters/Player/player.tscn
 res://main.tscn
+res://Maps/ProcMap.gd
+res://Maps/ProcMap.tscn
