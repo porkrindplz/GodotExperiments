@@ -5,6 +5,6 @@
 [node name="Food" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 texture_filter = 1
-scale = Vector2(4, 4)
 texture = ExtResource("1_3742t")

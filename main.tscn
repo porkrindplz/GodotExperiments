@@ -1,17 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://beq85xrl5rqg5"]
+[gd_scene load_steps=12 format=3 uid="uid://beq85xrl5rqg5"]
 
 [ext_resource type="PackedScene" uid="uid://bmfknmrrywcof" path="res://Characters/Player/player.tscn" id="2_ueec3"]
 [ext_resource type="PackedScene" uid="uid://dowqdfahre34a" path="res://Camera/camera.tscn" id="3_awls0"]
 [ext_resource type="Script" path="res://Camera/camera.gd" id="3_gprbs"]
-[ext_resource type="PackedScene" uid="uid://blas5ntftft8n" path="res://Interactive/pickup.tscn" id="4_b713i"]
-[ext_resource type="Resource" uid="uid://bmxl5c7q0vttn" path="res://data/Items/sword.tres" id="5_owtyi"]
-[ext_resource type="Resource" uid="uid://boq71uuwmdag7" path="res://data/Items/blood.tres" id="6_20btf"]
 [ext_resource type="Script" path="res://UI/UIRoot.gd" id="6_atil0"]
 [ext_resource type="PackedScene" uid="uid://bqn3nget0i00d" path="res://UI/Inventory/inventory_dialogue.tscn" id="6_hcjfl"]
-[ext_resource type="Resource" uid="uid://cg5hsaawcp3p3" path="res://data/Items/organs.tres" id="7_l088s"]
-[ext_resource type="Resource" uid="uid://bjyqejxnwm63i" path="res://data/Items/bone.tres" id="8_2bxmr"]
 [ext_resource type="PackedScene" uid="uid://fcwb6qgr7tjo" path="res://UI/Crafting/crafting_dialogue.tscn" id="8_roxwq"]
+[ext_resource type="Resource" uid="uid://boq71uuwmdag7" path="res://data/Items/blood.tres" id="9_r10p2"]
 [ext_resource type="Resource" uid="uid://dn2eoljfxng0k" path="res://data/all_recipes.tres" id="10_itsiv"]
+[ext_resource type="Resource" uid="uid://bjyqejxnwm63i" path="res://data/Items/bone.tres" id="10_q1407"]
+[ext_resource type="Resource" uid="uid://cg5hsaawcp3p3" path="res://data/Items/organs.tres" id="11_pnhld"]
 [ext_resource type="PackedScene" uid="uid://h8417wbm6xf3" path="res://Maps/ProcMap.tscn" id="13_ofmqc"]
 
 [node name="Main" type="Node2D"]
@@ -21,37 +19,6 @@ script = ExtResource("3_gprbs")
 
 [node name="Player" parent="." instance=ExtResource("2_ueec3")]
 unique_name_in_owner = true
-
-[node name="Pickup" parent="." instance=ExtResource("4_b713i")]
-position = Vector2(103, 2)
-
-[node name="Pickup2" parent="." instance=ExtResource("4_b713i")]
-position = Vector2(117, -141)
-item = ExtResource("5_owtyi")
-
-[node name="Pickup3" parent="." instance=ExtResource("4_b713i")]
-position = Vector2(283, -80)
-item = ExtResource("6_20btf")
-
-[node name="Pickup4" parent="." instance=ExtResource("4_b713i")]
-position = Vector2(157, 169)
-item = ExtResource("6_20btf")
-
-[node name="Pickup5" parent="." instance=ExtResource("4_b713i")]
-position = Vector2(-231, -167)
-item = ExtResource("6_20btf")
-
-[node name="Pickup6" parent="." instance=ExtResource("4_b713i")]
-position = Vector2(-322, 5)
-item = ExtResource("7_l088s")
-
-[node name="Pickup7" parent="." instance=ExtResource("4_b713i")]
-position = Vector2(-335, 149)
-item = ExtResource("8_2bxmr")
-
-[node name="Pickup8" parent="." instance=ExtResource("4_b713i")]
-position = Vector2(-159, 151)
-item = ExtResource("8_2bxmr")
 
 [node name="UIRoot" type="CanvasLayer" parent="."]
 script = ExtResource("6_atil0")
@@ -87,5 +54,5 @@ offset_bottom = 66.0
 
 [node name="ProceduralTileMap" parent="." instance=ExtResource("13_ofmqc")]
 z_index = -1
-_fractal_gain = 8.0
 _fractal_lacunarity = 4.0
+_spawnable_items = Array[Resource("res://data/Item.gd")]([ExtResource("9_r10p2"), ExtResource("10_q1407"), ExtResource("11_pnhld")])

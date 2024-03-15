@@ -7,7 +7,7 @@
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 20
+collision_mask = 28
 script = ExtResource("1_iky5h")
 
 [node name="InteractorArea2D" type="Area2D" parent="."]
@@ -22,6 +22,7 @@ shape = SubResource("RectangleShape2D_tb7ox")
 shape = SubResource("RectangleShape2D_tb7ox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
 texture_filter = 1
 sprite_frames = ExtResource("2_gfj3g")
 animation = &"walk_right"

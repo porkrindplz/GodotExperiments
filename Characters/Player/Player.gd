@@ -43,8 +43,6 @@ func _physics_process(delta)->void:
 		isFacingLeft = true
 		animated_sprite_2d.flip_h=true
 	
-
-	
 	target_velocity = direction*walk_speed*speed_multiplier
 	
 	velocity = target_velocity

@@ -1,10 +1,12 @@
-res://Maps/map.tscn
+res://Interactive/Pickup.gd
+res://Interactive/pickup_collider.tscn
+res://data/Items/blood.tres
 res://UI/UIRoot.gd
-res://Characters/Player/player_sprite_animations.tres
+res://Maps/ProcMap.gd
 res://data/all_recipes.tres
+res://Interactive/Pickup.tscn
+res://Maps/ProcMap.tscn
 res://Maps/TileSets/Walkable.tres
 res://Maps/TileSets/Obstacles.tres
-res://Characters/Player/player.tscn
 res://main.tscn
-res://Maps/ProcMap.gd
-res://Maps/ProcMap.tscn
+res://Characters/Player/player_sprite_animations.tres
