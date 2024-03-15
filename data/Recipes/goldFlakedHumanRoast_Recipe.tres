@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=5 format=3 uid="uid://cnst6w08wbj2k"]
+
+[ext_resource type="Resource" uid="uid://c62dq5kn8kumn" path="res://data/Items/food.tres" id="1_pxe1i"]
+[ext_resource type="Resource" uid="uid://tn4e6cyqk5w1" path="res://data/Items/marble.tres" id="2_3f20a"]
+[ext_resource type="Resource" uid="uid://ddyvf0gwm2awu" path="res://data/Items/food-Gold.tres" id="3_7otk0"]
+[ext_resource type="Script" path="res://data/Recipe.gd" id="4_b1b0l"]
+
+[resource]
+script = ExtResource("4_b1b0l")
+name = "Gold-flaked Human Roast"
+ingredients = Array[Resource("res://data/Item.gd")]([ExtResource("1_pxe1i"), ExtResource("2_3f20a")])
+results = Array[Resource("res://data/Item.gd")]([ExtResource("3_7otk0")])

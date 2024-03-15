@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://n0mwyu4mn2v"]
+
+[ext_resource type="Texture2D" uid="uid://qsm68ce65a6y" path="res://Graphics/Materials/Time.png" id="1_nhj1y"]
+
+[node name="Time" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_nhj1y")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://gpm7raa35g6m"]
+
+[ext_resource type="Texture2D" uid="uid://bjv6msj7tqk43" path="res://Graphics/Materials/organs.tres" id="1_0gpwn"]
+
+[node name="Organs" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_0gpwn")

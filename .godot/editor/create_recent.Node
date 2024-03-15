@@ -1,0 +1,15 @@
+AnimatedSprite2D
+CollisionShape2D
+Control
+Button
+GridContainer
+Label
+VBoxContainer
+ItemList
+HBoxContainer
+Sprite2D
+CanvasLayer
+TextureRect
+PanelContainer
+CharacterBody2D
+Camera2D

@@ -1,0 +1,8 @@
+res://Maps/map.tscn
+res://UI/UIRoot.gd
+res://Characters/Player/player_sprite_animations.tres
+res://data/all_recipes.tres
+res://Maps/TileSets/Walkable.tres
+res://Maps/TileSets/Obstacles.tres
+res://Characters/Player/player.tscn
+res://main.tscn

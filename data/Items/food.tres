@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://c62dq5kn8kumn"]
+
+[ext_resource type="Script" path="res://data/Item.gd" id="1_5tlf4"]
+[ext_resource type="Texture2D" uid="uid://b2wf765xxaoxl" path="res://Graphics/Materials/food.tres" id="1_qkpjg"]
+[ext_resource type="PackedScene" uid="uid://cjb2oovh84vld" path="res://Graphics/Materials/food.tscn" id="2_l3p8f"]
+
+[resource]
+script = ExtResource("1_5tlf4")
+name = "Food"
+scene = ExtResource("2_l3p8f")
+icon = ExtResource("1_qkpjg")
+price = 10

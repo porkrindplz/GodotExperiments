@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://blas5ntftft8n"]
+
+[ext_resource type="Script" path="res://Interactive/Pickup.gd" id="1_xix0u"]
+[ext_resource type="Resource" uid="uid://c47hq2lmy18ys" path="res://data/Items/pickaxe.tres" id="2_7h73p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gulwa"]
+
+[node name="Pickup" type="Node2D"]
+script = ExtResource("1_xix0u")
+item = ExtResource("2_7h73p")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.6, 1.6)
+shape = SubResource("RectangleShape2D_gulwa")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

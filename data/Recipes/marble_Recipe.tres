@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=5 format=3 uid="uid://dt8cpsvh83sxq"]
+
+[ext_resource type="Script" path="res://data/Recipe.gd" id="1_ahdmi"]
+[ext_resource type="Resource" uid="uid://bjyqejxnwm63i" path="res://data/Items/bone.tres" id="1_spwof"]
+[ext_resource type="Resource" uid="uid://boq71uuwmdag7" path="res://data/Items/blood.tres" id="2_2y1cv"]
+[ext_resource type="Resource" uid="uid://tn4e6cyqk5w1" path="res://data/Items/marble.tres" id="3_nfd80"]
+
+[resource]
+script = ExtResource("1_ahdmi")
+name = "Marble"
+ingredients = Array[Resource("res://data/Item.gd")]([ExtResource("1_spwof"), ExtResource("1_spwof"), ExtResource("2_2y1cv")])
+results = Array[Resource("res://data/Item.gd")]([ExtResource("3_nfd80"), ExtResource("3_nfd80")])

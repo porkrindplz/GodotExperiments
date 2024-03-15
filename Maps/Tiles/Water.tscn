@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bupb6jtciis3c"]
+
+[ext_resource type="Texture2D" uid="uid://bbd85lbq480y0" path="res://Tiles/Water.png" id="1_0r1sd"]
+
+[node name="WaterTile" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0r1sd")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bjyqejxnwm63i"]
+
+[ext_resource type="Script" path="res://data/Item.gd" id="1_m8fir"]
+[ext_resource type="Texture2D" uid="uid://e8guiawuxwrn" path="res://Graphics/Materials/bone.tres" id="1_wkckg"]
+[ext_resource type="PackedScene" uid="uid://dtrxs08e75cci" path="res://Graphics/Materials/bone.tscn" id="2_pe75c"]
+
+[resource]
+script = ExtResource("1_m8fir")
+name = "Bone"
+scene = ExtResource("2_pe75c")
+icon = ExtResource("1_wkckg")

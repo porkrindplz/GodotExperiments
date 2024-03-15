@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://8glxyy4uq85g"]
+
+[ext_resource type="Texture2D" uid="uid://bbd85lbq480y0" path="res://Maps/Tiles/Water.png" id="1_x5emt"]
+
+[node name="Sword" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.5, 1)
+texture = ExtResource("1_x5emt")

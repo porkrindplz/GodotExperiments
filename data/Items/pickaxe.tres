@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://c47hq2lmy18ys"]
+
+[ext_resource type="Script" path="res://data/Item.gd" id="1_82v63"]
+[ext_resource type="Texture2D" uid="uid://bbd85lbq480y0" path="res://Graphics/Materials/Water.png" id="1_il8or"]
+[ext_resource type="PackedScene" uid="uid://qxqd6int7p05" path="res://Graphics/Materials/pickaxe.tscn" id="2_csg5u"]
+
+[resource]
+script = ExtResource("1_82v63")
+name = "Pickaxe"
+scene = ExtResource("2_csg5u")
+icon = ExtResource("1_il8or")
+price = 75

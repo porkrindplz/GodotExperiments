@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bmxl5c7q0vttn"]
+
+[ext_resource type="Texture2D" uid="uid://0erh8q4uctly" path="res://Graphics/Materials/Wall.png" id="1_cq3ji"]
+[ext_resource type="Script" path="res://data/Item.gd" id="1_t6gaq"]
+[ext_resource type="PackedScene" uid="uid://8glxyy4uq85g" path="res://Graphics/Materials/sword.tscn" id="2_5mruc"]
+
+[resource]
+script = ExtResource("1_t6gaq")
+name = "Sword"
+scene = ExtResource("2_5mruc")
+icon = ExtResource("1_cq3ji")
+price = 200

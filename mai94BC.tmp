@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://beq85xrl5rqg5"]
+
+[ext_resource type="PackedScene" uid="uid://16e00l6b8hy0" path="res://Maps/map.tscn" id="1_e81jf"]
+[ext_resource type="PackedScene" uid="uid://bmfknmrrywcof" path="res://Characters/player.tscn" id="2_ueec3"]
+[ext_resource type="PackedScene" uid="uid://dowqdfahre34a" path="res://camera.tscn" id="3_awls0"]
+[ext_resource type="PackedScene" uid="uid://blas5ntftft8n" path="res://pickup.tscn" id="4_b713i"]
+[ext_resource type="Resource" uid="uid://bmxl5c7q0vttn" path="res://data/Items/sword.tres" id="5_owtyi"]
+[ext_resource type="Script" path="res://UIRoot.gd" id="6_atil0"]
+[ext_resource type="PackedScene" uid="uid://bqn3nget0i00d" path="res://Inventory/inventory_dialogue.tscn" id="6_hcjfl"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Map" parent="." instance=ExtResource("1_e81jf")]
+
+[node name="Camera" parent="." instance=ExtResource("3_awls0")]
+
+[node name="Player" parent="." instance=ExtResource("2_ueec3")]
+unique_name_in_owner = true
+
+[node name="Pickup" parent="." instance=ExtResource("4_b713i")]
+position = Vector2(103, 2)
+
+[node name="Pickup2" parent="." instance=ExtResource("4_b713i")]
+position = Vector2(33, -80)
+item = ExtResource("5_owtyi")
+
+[node name="UIRoot" type="CanvasLayer" parent="."]
+script = ExtResource("6_atil0")
+
+[node name="InventoryDialogue" parent="UIRoot" instance=ExtResource("6_hcjfl")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = -15.5
+offset_right = 48.5
+offset_bottom = 15.5

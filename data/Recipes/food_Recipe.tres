@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=5 format=3 uid="uid://u33acsia1elm"]
+
+[ext_resource type="Script" path="res://data/Recipe.gd" id="1_2g8bq"]
+[ext_resource type="Resource" uid="uid://boq71uuwmdag7" path="res://data/Items/blood.tres" id="1_mr3ef"]
+[ext_resource type="Resource" uid="uid://cg5hsaawcp3p3" path="res://data/Items/organs.tres" id="2_o6tg5"]
+[ext_resource type="Resource" uid="uid://c62dq5kn8kumn" path="res://data/Items/food.tres" id="3_asypq"]
+
+[resource]
+script = ExtResource("1_2g8bq")
+name = "Food"
+ingredients = Array[Resource("res://data/Item.gd")]([ExtResource("1_mr3ef"), ExtResource("1_mr3ef"), ExtResource("2_o6tg5")])
+results = Array[Resource("res://data/Item.gd")]([ExtResource("3_asypq"), ExtResource("3_asypq")])

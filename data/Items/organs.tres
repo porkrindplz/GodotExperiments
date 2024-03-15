@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cg5hsaawcp3p3"]
+
+[ext_resource type="Texture2D" uid="uid://bjv6msj7tqk43" path="res://Graphics/Materials/organs.tres" id="1_euujo"]
+[ext_resource type="PackedScene" uid="uid://gpm7raa35g6m" path="res://Graphics/Materials/organs.tscn" id="2_xtbs5"]
+[ext_resource type="Script" path="res://data/Item.gd" id="3_qbx8y"]
+
+[resource]
+script = ExtResource("3_qbx8y")
+name = "Organs"
+scene = ExtResource("2_xtbs5")
+icon = ExtResource("1_euujo")

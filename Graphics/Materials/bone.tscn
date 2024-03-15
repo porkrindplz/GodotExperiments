@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtrxs08e75cci"]
+
+[ext_resource type="Texture2D" uid="uid://e8guiawuxwrn" path="res://Graphics/Materials/bone.tres" id="1_t2qch"]
+
+[node name="Bone" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_t2qch")

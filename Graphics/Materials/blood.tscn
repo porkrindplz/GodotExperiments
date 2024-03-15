@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://l8g5cmleqhgd"]
+
+[ext_resource type="Texture2D" uid="uid://c7eu2l1widnrh" path="res://Graphics/Materials/blood.tres" id="1_5gm0x"]
+
+[node name="Blood" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_5gm0x")
