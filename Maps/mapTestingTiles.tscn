@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqkqsmmh2gv6c"]
 
-[ext_resource type="Texture2D" uid="uid://bqam8qjifn3be" path="res://Maps/TileSets/tiles_walkable.png" id="1_47kcq"]
+[ext_resource type="Texture2D" uid="uid://bqam8qjifn3be" path="res://Maps/Tiles/tiles_walkable.png" id="1_47kcq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2uojc"]
 resource_name = "GroundTest"

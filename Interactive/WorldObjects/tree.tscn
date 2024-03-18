@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://bw6cfjs0qnb1j"]
+
+[ext_resource type="Script" path="res://Interactive/WorldObjects/extractable.gd" id="1_l2qqk"]
+[ext_resource type="Texture2D" uid="uid://etir473dnrvh" path="res://Graphics/WorldObjects/trees_atlas_texture.tres" id="2_31rpp"]
+[ext_resource type="Resource" uid="uid://b86i4vll2w4ij" path="res://data/Items/wood.tres" id="2_uvjw6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tg78u"]
+size = Vector2(10, 5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yyiip"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhkgc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1r1jx"]
+bg_color = Color(0.298039, 0.560784, 0.917647, 1)
+
+[node name="Tree" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 10
+script = ExtResource("1_l2qqk")
+item_to_extract = ExtResource("2_uvjw6")
+quantity_to_extract = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_31rpp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_tg78u")
+
+[node name="WorkArea" type="Area2D" parent="."]
+position = Vector2(0, 8)
+collision_layer = 4
+collision_mask = 10
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorkArea"]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_yyiip")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -15.0
+offset_top = -18.0
+offset_right = 15.0
+offset_bottom = -13.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qhkgc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1r1jx")
+value = 50.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="ProgressBar"]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="WorkArea" to="." method="_on_work_area_body_entered"]
+[connection signal="body_exited" from="WorkArea" to="." method="_on_work_area_body_exited"]
+[connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_timer_timeout"]

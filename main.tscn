@@ -1,27 +1,30 @@
 [gd_scene load_steps=14 format=3 uid="uid://beq85xrl5rqg5"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_5c8lx"]
+[ext_resource type="Script" path="res://main.gd" id="1_xrstn"]
 [ext_resource type="PackedScene" uid="uid://bmfknmrrywcof" path="res://Characters/Player/player.tscn" id="2_ueec3"]
-[ext_resource type="PackedScene" uid="uid://dowqdfahre34a" path="res://Camera/camera.tscn" id="3_awls0"]
-[ext_resource type="Script" path="res://Camera/camera.gd" id="3_gprbs"]
+[ext_resource type="PackedScene" uid="uid://wh2yqv3fg15q" path="res://Camera/camera.tscn" id="3_awls0"]
 [ext_resource type="Script" path="res://UI/UIRoot.gd" id="6_atil0"]
 [ext_resource type="PackedScene" uid="uid://bqn3nget0i00d" path="res://UI/Inventory/inventory_dialogue.tscn" id="6_hcjfl"]
 [ext_resource type="PackedScene" uid="uid://fcwb6qgr7tjo" path="res://UI/Crafting/crafting_dialogue.tscn" id="8_roxwq"]
-[ext_resource type="Resource" uid="uid://boq71uuwmdag7" path="res://data/Items/blood.tres" id="9_r10p2"]
+[ext_resource type="PackedScene" uid="uid://17doiv565an8" path="res://Maps/tile_map.tscn" id="9_kitlh"]
 [ext_resource type="Resource" uid="uid://dn2eoljfxng0k" path="res://data/all_recipes.tres" id="10_itsiv"]
-[ext_resource type="Resource" uid="uid://bjyqejxnwm63i" path="res://data/Items/bone.tres" id="10_q1407"]
-[ext_resource type="Resource" uid="uid://cg5hsaawcp3p3" path="res://data/Items/organs.tres" id="11_pnhld"]
-[ext_resource type="PackedScene" uid="uid://2xepn16rxhwc" path="res://Characters/AI/ai.tscn" id="12_vew5n"]
-[ext_resource type="PackedScene" uid="uid://h8417wbm6xf3" path="res://Maps/ProcMap.tscn" id="13_ofmqc"]
+[ext_resource type="PackedScene" uid="uid://bi2d5yhgxhm4x" path="res://pathfinding.tscn" id="10_mge8m"]
+[ext_resource type="PackedScene" uid="uid://bw6cfjs0qnb1j" path="res://Interactive/WorldObjects/tree.tscn" id="13_v5wji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_246gv"]
+bg_color = Color(0.380392, 0.32549, 0.74902, 0.313726)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.615686, 0.333333, 0.827451, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_5c8lx")
-
-[node name="Camera" parent="." instance=ExtResource("3_awls0")]
-script = ExtResource("3_gprbs")
-
-[node name="Player" parent="." instance=ExtResource("2_ueec3")]
-unique_name_in_owner = true
+script = ExtResource("1_xrstn")
 
 [node name="UIRoot" type="CanvasLayer" parent="."]
 script = ExtResource("6_atil0")
@@ -55,12 +58,36 @@ offset_top = -66.0
 offset_right = 171.0
 offset_bottom = 66.0
 
-[node name="ProceduralTileMap" parent="." instance=ExtResource("13_ofmqc")]
-z_index = -1
-_fractal_lacunarity = 4.0
-_spawnable_items = Array[Resource("res://data/Item.gd")]([ExtResource("9_r10p2"), ExtResource("10_q1407"), ExtResource("11_pnhld")])
+[node name="SelectionBox" type="Panel" parent="UIRoot"]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_246gv")
 
-[node name="AI" parent="." instance=ExtResource("12_vew5n")]
+[node name="Pickups" type="Node2D" parent="."]
+unique_name_in_owner = true
 
-[node name="Items" type="Node2D" parent="."]
+[node name="Beings" type="Node2D" parent="."]
+
+[node name="Player" parent="Beings" instance=ExtResource("2_ueec3")]
+unique_name_in_owner = true
+
+[node name="Player2" parent="Beings" instance=ExtResource("2_ueec3")]
+unique_name_in_owner = true
+position = Vector2(62, 120)
+
+[node name="Player3" parent="Beings" instance=ExtResource("2_ueec3")]
+unique_name_in_owner = true
+position = Vector2(31, -72)
+
+[node name="Tree" parent="." instance=ExtResource("13_v5wji")]
+position = Vector2(-19, -64)
+
+[node name="Camera2D" parent="." instance=ExtResource("3_awls0")]
+
+[node name="TileMap" parent="." instance=ExtResource("9_kitlh")]
+unique_name_in_owner = true
+layer_1/z_index = -1
+
+[node name="Pathfinding" parent="." instance=ExtResource("10_mge8m")]
 unique_name_in_owner = true

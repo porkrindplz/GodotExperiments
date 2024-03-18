@@ -1,10 +1,20 @@
-extends Node2D
+extends TileMap
 
 class_name ProcMapGen
 
+enum ETerrainType{Grass=0, Cave=1, City=2}
+enum ETileType{Walkable = 0, Nonwalkable = 1}
+enum ESurfaceType{Wall=0, Water =1}
+
+#Terrain
+@export var _terrain = ETerrainType.Grass
+
 #Tile Data
-@onready var walkable: TileMap = %Walkable
-@onready var non_walkable: TileMap = %NonWalkable
+#@onready var walkable: TileMap = %Walkable
+#@onready var non_walkable: TileMap = %NonWalkable
+
+const WALKABLE = preload("res://Maps/TileSets/Walkable.tres")
+const OBSTACLES = preload("res://Maps/TileSets/Obstacles.tres")
 
 #Generation Dials
 @export var _xSize = 49 #half extent
@@ -38,24 +48,25 @@ func _ready():
 	_noise.fractal_ping_pong_strength = _fractal_ping_pong_strength # original 0.15
 	_noise.fractal_lacunarity = _fractal_lacunarity # original 1.4
 	
+	
 	for i in range( - _xSize, _xSize - 1):
 		for j in range( - _ySize, _ySize - 1):
 			_val = _noise.get_noise_2d(i, j)
 			if _val < - 0.2:
+				#walls
 				_max += 1
-				non_walkable.set_cell(0, Vector2i(i, j), 0, Vector2i(1, 2))
+				set_cell(1, Vector2i(i, j), ETileType.Nonwalkable, Vector2i(ESurfaceType.Wall, _terrain))
 			elif _val > 0.3:
+				#water
 				_max += 1
-				non_walkable.set_cell(0, Vector2i(i, j), 0, Vector2i(2, 2))
+				set_cell(1, Vector2i(i, j), ETileType.Nonwalkable, Vector2i(ESurfaceType.Water, _terrain))
 			else:
-				walkable.set_cell(0, Vector2i(i, j), 0, Vector2i(3, 0))
+				#ground
+				set_cell(0, Vector2i(i, j), ETileType.Walkable, Vector2i(0, _terrain))
 				if rng.randi_range(1, 100) == 1:
 					if _spawnable_items.size() > 0:
 						var rand_item = rng.randi_range(0, _spawnable_items.size() - 1)
-						var pickup:Pickup =PICKUP.instantiate()
-						pickup.spawn_item(_spawnable_items[rand_item])
-						pickup.position = Vector2(i, j) * TILESIZE + Vector2(16, 16)
-						get_parent().get_node("Items").add_child.call_deferred(pickup)
+						GameManager.spawn_pickup(_spawnable_items[rand_item],Vector2(i, j) * TILESIZE + Vector2(16, 16))
 
 	print(_min)
 	print(_max)

@@ -1,10 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://n0mwyu4mn2v"]
+[gd_scene load_steps=3 format=3 uid="uid://n0mwyu4mn2v"]
 
 [ext_resource type="Texture2D" uid="uid://qsm68ce65a6y" path="res://Graphics/Materials/Time.png" id="1_nhj1y"]
+[ext_resource type="PackedScene" uid="uid://bk40qvgb188sg" path="res://Graphics/Materials/resource_sprite_template.tscn" id="2_hih63"]
 
 [node name="Time" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-y_sort_enabled = true
-texture_filter = 1
+[node name="ResourceSprite2D" parent="." instance=ExtResource("2_hih63")]
 texture = ExtResource("1_nhj1y")

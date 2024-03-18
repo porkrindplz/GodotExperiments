@@ -1,10 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx3i560qaghu8"]
+[gd_scene load_steps=3 format=3 uid="uid://cx3i560qaghu8"]
 
+[ext_resource type="PackedScene" uid="uid://bk40qvgb188sg" path="res://Graphics/Materials/resource_sprite_template.tscn" id="1_labu0"]
 [ext_resource type="Texture2D" uid="uid://2i5c47wnrhv5" path="res://Graphics/Materials/electronics.tres" id="1_lno47"]
 
 [node name="Electronics" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-y_sort_enabled = true
-texture_filter = 1
+[node name="ResourceSprite2D" parent="." instance=ExtResource("1_labu0")]
 texture = ExtResource("1_lno47")
