@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqam8qjifn3be"
-path="res://.godot/imported/tiles_walkable.png-3cb7676043e257c1eaba2e24ed3d42ba.ctex"
+uid="uid://cyu55orpq76fs"
+path="res://.godot/imported/trees.png-67cb724d526b5076c3b2058b9315c3a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/TileSets/tiles_walkable.png"
-dest_files=["res://.godot/imported/tiles_walkable.png-3cb7676043e257c1eaba2e24ed3d42ba.ctex"]
+source_file="res://Graphics/WorldObjects/trees.png"
+dest_files=["res://.godot/imported/trees.png-67cb724d526b5076c3b2058b9315c3a7.ctex"]
 
 [params]
 

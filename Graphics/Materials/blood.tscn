@@ -1,10 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://l8g5cmleqhgd"]
+[gd_scene load_steps=3 format=3 uid="uid://l8g5cmleqhgd"]
 
 [ext_resource type="Texture2D" uid="uid://c7eu2l1widnrh" path="res://Graphics/Materials/blood.tres" id="1_5gm0x"]
+[ext_resource type="PackedScene" uid="uid://bk40qvgb188sg" path="res://Graphics/Materials/resource_sprite_template.tscn" id="1_gaf7s"]
 
 [node name="Blood" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-y_sort_enabled = true
-texture_filter = 1
+[node name="ResourceSprite2D" parent="." instance=ExtResource("1_gaf7s")]
 texture = ExtResource("1_5gm0x")

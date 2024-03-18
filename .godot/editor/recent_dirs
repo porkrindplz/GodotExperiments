@@ -1,14 +1,20 @@
+res://
+res://Graphics/Tiles
+res://Maps/TileSets
+res://Maps
+res://Camera
+res://Graphics/Materials
+res://data/Items
+res://Global
+res://Graphics/WorldObjects
+res://Interactive/WorldObjects
 res://Interactive
 res://Characters/Player
 res://Graphics/Characters
-res://Maps/TileSets
 C:/Users/Mike/Documents/Godot/TestBuilds/InventoryTest (Mar14 2024)
 res://data/Recipes
 res://data
 C:/Users/Mike/Documents/Godot/TestBuilds
 res://UI/ItemGrid
-res://data/Items
 res://Characters
-res://
 res://Graphics
-res://Maps

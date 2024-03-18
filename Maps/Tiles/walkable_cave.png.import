@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0wsvjs8vv62x"
-path="res://.godot/imported/tiles_obstacles.png-c52db3eeef1bc6c8ff1ea3bf2501c88d.ctex"
+uid="uid://gw7f2iyys5s8"
+path="res://.godot/imported/walkable_cave.png-218ac650a424bdc979080b7db6648eb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/TileSets/tiles_obstacles.png"
-dest_files=["res://.godot/imported/tiles_obstacles.png-c52db3eeef1bc6c8ff1ea3bf2501c88d.ctex"]
+source_file="res://Maps/Tiles/walkable_cave.png"
+dest_files=["res://.godot/imported/walkable_cave.png-218ac650a424bdc979080b7db6648eb5.ctex"]
 
 [params]
 

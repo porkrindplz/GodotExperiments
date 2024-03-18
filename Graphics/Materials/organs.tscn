@@ -1,10 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://gpm7raa35g6m"]
+[gd_scene load_steps=3 format=3 uid="uid://gpm7raa35g6m"]
 
 [ext_resource type="Texture2D" uid="uid://bjv6msj7tqk43" path="res://Graphics/Materials/organs.tres" id="1_0gpwn"]
+[ext_resource type="PackedScene" uid="uid://bk40qvgb188sg" path="res://Graphics/Materials/resource_sprite_template.tscn" id="2_wri5w"]
 
 [node name="Organs" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-y_sort_enabled = true
-texture_filter = 1
+[node name="ResourceSprite2D" parent="." instance=ExtResource("2_wri5w")]
 texture = ExtResource("1_0gpwn")

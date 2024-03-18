@@ -1,13 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmfknmrrywcof"]
+[gd_scene load_steps=5 format=3 uid="uid://bmfknmrrywcof"]
 
-[ext_resource type="Script" path="res://Characters/Player/Player.gd" id="1_iky5h"]
+[ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_iky5h"]
 [ext_resource type="SpriteFrames" uid="uid://dcfi4jrvasy7f" path="res://Characters/Player/player_sprite_animations.tres" id="2_gfj3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tb7ox"]
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7khb"]
+bg_color = Color(0.380392, 0.32549, 0.74902, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.615686, 0.333333, 0.827451, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Player" type="CharacterBody2D" groups=["Beings"]]
 collision_layer = 2
-collision_mask = 28
+collision_mask = 30
 script = ExtResource("1_iky5h")
 
 [node name="InteractorArea2D" type="Area2D" parent="."]
@@ -28,3 +40,20 @@ sprite_frames = ExtResource("2_gfj3g")
 animation = &"walk_right"
 autoplay = "idle"
 frame_progress = 0.288459
+
+[node name="SelectionBox" type="Panel" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_g7khb")

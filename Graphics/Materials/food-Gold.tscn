@@ -1,11 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://buyk5recik55y"]
+[gd_scene load_steps=3 format=3 uid="uid://buyk5recik55y"]
 
-[ext_resource type="Texture2D" uid="uid://b2wf765xxaoxl" path="res://Graphics/Materials/food.tres" id="1_snk8l"]
+[ext_resource type="PackedScene" uid="uid://bk40qvgb188sg" path="res://Graphics/Materials/resource_sprite_template.tscn" id="1_5j64u"]
+[ext_resource type="Texture2D" uid="uid://das3uf573u2fu" path="res://Graphics/Materials/food-Gold.tres" id="2_yq1vr"]
 
-[node name="Food" type="Node2D"]
+[node name="Food-Gold" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.956863, 0.635294, 0, 1)
-y_sort_enabled = true
-texture_filter = 1
-texture = ExtResource("1_snk8l")
+[node name="ResourceSprite2D" parent="." instance=ExtResource("1_5j64u")]
+texture = ExtResource("2_yq1vr")

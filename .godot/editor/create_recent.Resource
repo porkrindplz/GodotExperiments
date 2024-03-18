@@ -1,6 +1,6 @@
-AtlasTexture
 TileSet
-ResourceGroup
 Item
+AtlasTexture
+ResourceGroup
 Resource
 Recipe

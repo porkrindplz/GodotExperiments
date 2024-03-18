@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://bu6isf4ack3fw"]
+[gd_scene load_steps=3 format=3 uid="uid://dftb2t1mei4i1"]
+
+[ext_resource type="PackedScene" uid="uid://bk40qvgb188sg" path="res://Graphics/Materials/resource_sprite_template.tscn" id="1_grty0"]
+[ext_resource type="Texture2D" uid="uid://blqdm26pa5mt0" path="res://Graphics/Materials/Wood.png" id="2_vpvng"]
 
 [node name="Wood" type="Node2D"]
+
+[node name="ResourceSprite2D" parent="." instance=ExtResource("1_grty0")]
+texture = ExtResource("2_vpvng")

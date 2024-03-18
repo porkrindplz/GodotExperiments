@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://17doiv565an8"]
+
+[ext_resource type="TileSet" uid="uid://cfw4ckhiurk4q" path="res://Maps/TileSets/tile_set.tres" id="1_ltbev"]
+[ext_resource type="Script" path="res://Maps/tile_map.gd" id="2_7o1ce"]
+
+[node name="TileMap" type="TileMap"]
+z_index = -1
+tile_set = ExtResource("1_ltbev")
+rendering_quadrant_size = 32
+format = 2
+layer_0/name = "BaseGround"
+layer_1/name = "TopGround"
+layer_1/navigation_enabled = false
+layer_1/tile_data = PackedInt32Array()
+script = ExtResource("2_7o1ce")
+_fractal_octaves = 5
+_fractal_gain = 20.0
+_fractal_ping_pong_strength = 0.2
+_fractal_lacunarity = 1.3
