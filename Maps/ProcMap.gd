@@ -55,7 +55,7 @@ func _ready():
 						var pickup:Pickup =PICKUP.instantiate()
 						pickup.spawn_item(_spawnable_items[rand_item])
 						pickup.position = Vector2(i, j) * TILESIZE + Vector2(16, 16)
-						get_parent().add_child.call_deferred(pickup)
+						get_parent().get_node("Items").add_child.call_deferred(pickup)
 
 	print(_min)
 	print(_max)

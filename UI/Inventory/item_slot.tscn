@@ -9,3 +9,9 @@ script = ExtResource("1_21otd")
 [node name="TextureRect" type="TextureRect" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="AmountLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8

@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://beq85xrl5rqg5"]
+[gd_scene load_steps=14 format=3 uid="uid://beq85xrl5rqg5"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_5c8lx"]
 [ext_resource type="PackedScene" uid="uid://bmfknmrrywcof" path="res://Characters/Player/player.tscn" id="2_ueec3"]
 [ext_resource type="PackedScene" uid="uid://dowqdfahre34a" path="res://Camera/camera.tscn" id="3_awls0"]
 [ext_resource type="Script" path="res://Camera/camera.gd" id="3_gprbs"]
@@ -10,9 +11,11 @@
 [ext_resource type="Resource" uid="uid://dn2eoljfxng0k" path="res://data/all_recipes.tres" id="10_itsiv"]
 [ext_resource type="Resource" uid="uid://bjyqejxnwm63i" path="res://data/Items/bone.tres" id="10_q1407"]
 [ext_resource type="Resource" uid="uid://cg5hsaawcp3p3" path="res://data/Items/organs.tres" id="11_pnhld"]
+[ext_resource type="PackedScene" uid="uid://2xepn16rxhwc" path="res://Characters/AI/ai.tscn" id="12_vew5n"]
 [ext_resource type="PackedScene" uid="uid://h8417wbm6xf3" path="res://Maps/ProcMap.tscn" id="13_ofmqc"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_5c8lx")
 
 [node name="Camera" parent="." instance=ExtResource("3_awls0")]
 script = ExtResource("3_gprbs")
@@ -56,3 +59,8 @@ offset_bottom = 66.0
 z_index = -1
 _fractal_lacunarity = 4.0
 _spawnable_items = Array[Resource("res://data/Item.gd")]([ExtResource("9_r10p2"), ExtResource("10_q1407"), ExtResource("11_pnhld")])
+
+[node name="AI" parent="." instance=ExtResource("12_vew5n")]
+
+[node name="Items" type="Node2D" parent="."]
+unique_name_in_owner = true

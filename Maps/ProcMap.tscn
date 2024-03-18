@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://h8417wbm6xf3"]
+[gd_scene load_steps=5 format=3 uid="uid://h8417wbm6xf3"]
 
 [ext_resource type="Script" path="res://Maps/ProcMap.gd" id="1_pogkv"]
 [ext_resource type="TileSet" uid="uid://drqc4co8enyva" path="res://Maps/TileSets/Walkable.tres" id="2_8vhtf"]
 [ext_resource type="TileSet" uid="uid://b76d6wll6ytke" path="res://Maps/TileSets/Obstacles.tres" id="3_2dlwj"]
+[ext_resource type="Script" path="res://Maps/Pathfinding.gd" id="4_nmg75"]
 
 [node name="ProceduralTileMap" type="Node2D"]
 script = ExtResource("1_pogkv")
@@ -18,3 +19,6 @@ unique_name_in_owner = true
 tile_set = ExtResource("3_2dlwj")
 rendering_quadrant_size = 32
 format = 2
+
+[node name="Pathfinding" type="Node2D" parent="."]
+script = ExtResource("4_nmg75")
