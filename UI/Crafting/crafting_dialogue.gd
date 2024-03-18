@@ -29,10 +29,10 @@ func open(recipes:Array[Recipe],inventory: Inventory):
 		
 func _on_recipe_list_item_selected(index):
 	_selected_recipe = recipe_list.get_item_metadata(index)
-	ingredients_container.display(_selected_recipe.ingredients)
-	results_container.display(_selected_recipe.results)	
+	ingredients_container.display(_selected_recipe.get_ingredients_stacked())
+	results_container.display(_selected_recipe.get_results_stacked())
 	
-	craft_button.disabled = not _inventory.has_all(_selected_recipe.ingredients)
+	craft_button.disabled = not _inventory.has_all(_selected_recipe.get_ingredients_stacked())
 
 func _on_close_button_pressed():
 	hide()
@@ -43,4 +43,4 @@ func _on_craft_button_pressed():
 	for item in _selected_recipe.results:
 		_inventory.add_item(item)
 		
-	craft_button.disabled = not _inventory.has_all(_selected_recipe.ingredients)
+	craft_button.disabled = not _inventory.has_all(_selected_recipe.get_ingredients_stacked())
