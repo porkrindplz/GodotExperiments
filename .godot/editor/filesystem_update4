@@ -1,9 +1,0 @@
-res://Characters/AI/ai.tscn
-res://UI/UIRoot.gd
-res://Maps/TileSets/Walkable.tres
-res://Maps/TileSets/Obstacles.tres
-res://Characters/Player/player_sprite_animations.tres
-res://data/all_recipes.tres
-res://Characters/AI/ai.gd
-res://Maps/ProcMap.tscn
-res://Maps/Pathfinding.gd
