@@ -15,13 +15,14 @@ func _ready()->void:
 	astar.update()
 	initialize_cells(size)
 	
-	astar.get_point_path(Vector2i(10,10), Vector2i(20,20))
 	
-	
-func get_path_between(start_world: Vector2, end_world : Vector2):
+func get_path_between(start_world: Vector2, end_world : Vector2) -> PackedVector2Array:
 	var start_pos = %TileMap.local_to_map(%TileMap.to_local(start_world))
 	var end_pos = %TileMap.local_to_map(%TileMap.to_local(end_world))
-	return astar.get_point_path(start_pos, end_pos)
+	var path = astar.get_point_path(start_pos, end_pos)
+	for i in range(path.size()):
+		path.set(i, path[i] + Vector2(16,16))
+	return path.slice(1)
 
 func get_id_path(start_world: Vector2, end_world: Vector2):
 	var start_pos = %TileMap.local_to_map(%TileMap.to_local(start_world))
@@ -32,8 +33,8 @@ func get_id_path(start_world: Vector2, end_world: Vector2):
 		return []
 	else: return result
 
-func get_target_position(next_position:Vector2):
-	return %TileMap.local_to_map(next_position)
+func get_target_position(next_position:Vector2i):
+	return astar.get_point_position(next_position)
 
 func initialize_cells(size : Vector2i):
 		for x in size.x:

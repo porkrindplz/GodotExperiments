@@ -17,7 +17,7 @@ var follow_cursor = false
 
 #Pathfinding
 @onready var pathfinding = get_node("/root/Main/Pathfinding")
-var current_id_path:Array[Vector2i]
+var current_path:PackedVector2Array
 var target_position
 
 func _ready():
@@ -28,13 +28,14 @@ func set_selected(value):
 	selection_box.visible = value
 	
 func _input(event):
-	if event.is_action_pressed("SelectSecondary"):
+	if event.is_action_pressed("SelectSecondary") and selected:
 		follow_cursor = true
-		var id_path = pathfinding.get_id_path(position,target).slice(1)
-		if id_path.is_empty()==false:
-			print(id_path)
-			current_id_path = id_path
-	if event.is_action_released("SelectSecondary"):
+		target = get_global_mouse_position()
+		var path = pathfinding.get_path_between(position,target)
+		if path.is_empty()==false:
+			print(path)
+			current_path = path
+	if event.is_action_released("SelectSecondary") and selected:
 		follow_cursor = false
 
 func on_item_picked_up(item: Item):
@@ -45,21 +46,23 @@ func _physics_process(delta) -> void:
 	else: handle_keyboard_control()
 	
 func handle_mouse_control():
-	if follow_cursor:
-		if selected:
-			target = get_global_mouse_position()
-		if current_id_path.is_empty(): return
-		var target_position = pathfinding.get_target_position(current_id_path.front())
+	
+	if !current_path.is_empty():
+		var target_position = current_path[0]
 		var direction = position.direction_to(target_position)
 		velocity = direction * walk_speed
 		if position.distance_to(target_position)<1:
-			current_id_path.pop_front()
+			current_path.remove_at(0)
 		animated_sprite_2d.animation = "walk_right"
-		if position.distance_to(target) > 15:
-			move_and_slide()
-		else:
-			animated_sprite_2d.animation = "idle"
-		return
+	else:
+		velocity = Vector2.ZERO
+		animated_sprite_2d.animation = "idle"
+	
+	if follow_cursor:
+		if selected:
+			target = get_global_mouse_position()
+	
+	move_and_slide()
 
 func handle_keyboard_control():
 	var direction = Vector2.ZERO
