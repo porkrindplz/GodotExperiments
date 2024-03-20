@@ -21,7 +21,7 @@ func get_path_between(start_world: Vector2, end_world : Vector2) -> PackedVector
 	var end_pos = %TileMap.local_to_map(%TileMap.to_local(end_world))
 	var path = astar.get_point_path(start_pos, end_pos)
 	for i in range(path.size()):
-		path.set(i, path[i] + Vector2(16,16))
+		path.set(i, path[i] + astar.cell_size/2)
 	return path.slice(1)
 
 func get_id_path(start_world: Vector2, end_world: Vector2):

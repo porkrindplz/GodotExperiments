@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://17doiv565an8"]
+[gd_scene load_steps=4 format=3 uid="uid://17doiv565an8"]
 
 [ext_resource type="TileSet" uid="uid://cfw4ckhiurk4q" path="res://Maps/TileSets/tile_set.tres" id="1_ltbev"]
 [ext_resource type="Script" path="res://Maps/tile_map.gd" id="2_7o1ce"]
+[ext_resource type="Resource" uid="uid://b86i4vll2w4ij" path="res://data/Items/wood.tres" id="3_we078"]
 
 [node name="TileMap" type="TileMap"]
 z_index = -1
@@ -17,3 +18,5 @@ _fractal_octaves = 5
 _fractal_gain = 20.0
 _fractal_ping_pong_strength = 0.2
 _fractal_lacunarity = 1.3
+wood_spawn = 0.9
+_spawnable_items = Array[Resource("res://data/Item.gd")]([ExtResource("3_we078")])

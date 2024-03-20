@@ -24,7 +24,10 @@ const OBSTACLES = preload("res://Maps/TileSets/Obstacles.tres")
 @export var _fractal_ping_pong_strength: float = 0.15
 @export var _fractal_lacunarity: float = 1.4
 
+@export var wood_spawn = 0.3
+
 #Spawnable Objects
+@export var _spawnables: Array[PackedScene] = []
 @export var _spawnable_items: Array[Item] = []
 const PICKUP = preload("res://Interactive/Pickup.tscn")
 
@@ -65,8 +68,25 @@ func _ready():
 				set_cell(0, Vector2i(i, j), ETileType.Walkable, Vector2i(0, _terrain))
 				if rng.randi_range(1, 100) == 1:
 					if _spawnable_items.size() > 0:
-						var rand_item = rng.randi_range(0, _spawnable_items.size() - 1)
-						GameManager.spawn_pickup(_spawnable_items[rand_item],Vector2(i, j) * TILESIZE + Vector2(16, 16))
+						GameManager.spawn_pickup(_spawnable_items.pick_random(),Vector2(i, j) * TILESIZE + Vector2(16, 16))
 
 	print(_min)
 	print(_max)
+	add_placement(wood_spawn)
+
+func add_placement(threshold: float):
+	var _noise = FastNoiseLite.new()
+	
+	_noise.seed = rng.randf_range(0, 999999)
+	_noise.fractal_octaves = _fractal_octaves # original 2
+	_noise.fractal_gain = _fractal_gain # original 8
+	_noise.fractal_ping_pong_strength = _fractal_ping_pong_strength # original 0.15
+	_noise.fractal_lacunarity = _fractal_lacunarity # original 1.4
+	
+	
+	for i in range( - _xSize, _xSize - 1):
+		for j in range( - _ySize, _ySize - 1):
+			_val = _noise.get_noise_2d(i, j)
+			if _val > threshold and get_cell_source_id(1, Vector2(i,j)) == -1:
+				if _spawnable_items.size() > 0:
+						GameManager.spawn_pickup(_spawnable_items.pick_random(),Vector2(i, j) * TILESIZE + Vector2(16, 16))

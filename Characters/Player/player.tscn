@@ -59,3 +59,22 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_g7khb")
 metadata/_edit_use_anchors_ = true
+
+[node name="UtilityAIAgent" type="UtilityAIAgent" parent="."]
+
+[node name="Sensors" type="UtilityAISensorGroup" parent="UtilityAIAgent"]
+
+[node name="PickupSensor" type="UtilityAIArea2DVisibilitySensor" parent="UtilityAIAgent/Sensors" node_paths=PackedStringArray("visibility_volume")]
+visibility_volume = NodePath("../../../InteractorArea2D")
+
+[node name="HungerTimer" type="Timer" parent="."]
+
+[node name="SleepTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="AgeTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]
+[connection signal="timeout" from="SleepTimer" to="." method="_on_sleep_timer_timeout"]
+[connection signal="timeout" from="AgeTimer" to="." method="_on_age_timer_timeout"]

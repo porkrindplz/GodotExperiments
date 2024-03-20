@@ -9,6 +9,21 @@ var mouse_control = true
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
+# Stats
+@export var id:int = 0
+@export var human_name:String = "Succ. Chin. Meal"
+@export var age:int = 25
+@export var hunger:int = 10
+@export var energy:int = 75
+@export var health:int = 100
+
+# Stores a value between -100 and 100 for the opinions of each entity
+var relationships:Dictionary = {}
+
+# AI
+@onready var ai = $UtilityAIAgent
+@onready var pickup_sensor = $UtilityAIAgent/Sensors/PickupSensor
+
 #Mousecontrol
 @export var selected = false
 @onready var selection_box = %SelectionBox
@@ -46,7 +61,11 @@ func _physics_process(delta) -> void:
 	else: handle_keyboard_control()
 	
 func handle_mouse_control():
-	
+	if follow_cursor and selected:
+		target = get_global_mouse_position()
+	_move()
+
+func _move():
 	if !current_path.is_empty():
 		var target_position = current_path[0]
 		var direction = position.direction_to(target_position)
@@ -57,11 +76,6 @@ func handle_mouse_control():
 	else:
 		velocity = Vector2.ZERO
 		animated_sprite_2d.animation = "idle"
-	
-	if follow_cursor:
-		if selected:
-			target = get_global_mouse_position()
-	
 	move_and_slide()
 
 func handle_keyboard_control():
@@ -97,3 +111,13 @@ func handle_keyboard_control():
 	
 	velocity = target_velocity
 	move_and_slide()
+
+
+func _on_sleep_timer_timeout():
+	energy = max(0, energy-1)
+
+func _on_hunger_timer_timeout():
+	hunger = max(0, hunger-1)
+
+func _on_age_timer_timeout():
+	age += 1
