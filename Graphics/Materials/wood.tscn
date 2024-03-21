@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://blqdm26pa5mt0" path="res://Graphics/Materials/Wood.png" id="2_vpvng"]
 
 [node name="Wood" type="Node2D"]
+y_sort_enabled = true
 
 [node name="ResourceSprite2D" parent="." instance=ExtResource("1_grty0")]
 texture = ExtResource("2_vpvng")

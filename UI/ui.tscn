@@ -1,193 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://cack8rp7rdddq"]
+[gd_scene load_steps=2 format=3 uid="uid://cack8rp7rdddq"]
 
-[ext_resource type="Theme" uid="uid://bib7fbpf0kuta" path="res://addons/DarkTheme/Dark.theme" id="1_okxlg"]
-[ext_resource type="PackedScene" uid="uid://02jskmvf5pwn" path="res://UI/human_info.tscn" id="1_qr252"]
+[ext_resource type="PackedScene" uid="uid://cptmssfl4aw0q" path="res://UI/minion_container.tscn" id="1_fyepd"]
 
 [node name="UI" type="CanvasLayer"]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_right = 827.0
-offset_bottom = 607.0
-theme = ExtResource("1_okxlg")
+[node name="Minions" type="TabBar" parent="."]
+anchors_preset = -1
+anchor_right = 0.464063
+anchor_bottom = 0.586111
+offset_left = 54.0
+offset_top = 18.0
+offset_right = 63.0
+offset_bottom = 85.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="MinionContainer1" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-metadata/_edit_use_anchors_ = true
+[node name="TabContainer" type="TabContainer" parent="Minions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+drag_to_rearrange_enabled = true
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MinionContainer1"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MinionContainer1/PanelContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
-
-[node name="OverviewContainer" type="VBoxContainer" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 2
-
-[node name="NameLabel" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer"]
-layout_mode = 2
-size_flags_horizontal = 2
-text = "Minion"
-
-[node name="MoodLabel" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer"]
-layout_mode = 2
-text = "Mood: Apathetic"
-
-[node name="PersonalityLabel" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer"]
-layout_mode = 2
-text = "Personality:"
-
-[node name="PersonalityContainer" type="VBoxContainer" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-
-[node name="Test1Label" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer/PersonalityContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "Violent"
-
-[node name="Test1Label2" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer/PersonalityContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "Humourless"
-
-[node name="Test1Label3" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer/PersonalityContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "Violent"
-
-[node name="Test1Label4" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer/PersonalityContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "Violent"
-
-[node name="Test1Label5" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer/PersonalityContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "Violent"
-
-[node name="SpecialtiesLabel" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer"]
-layout_mode = 2
-text = "Speciality:"
-
-[node name="SpecialityLabel" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer"]
-layout_mode = 2
-text = "Security"
-
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="AssignedHumans" type="VBoxContainer" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-
-[node name="Labels" type="HBoxContainer" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/AssignedHumans"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_override_constants/separation = 30
-
-[node name="HumanName" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/AssignedHumans/Labels"]
-layout_mode = 2
-text = "Name"
-
-[node name="HumanMood" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/AssignedHumans/Labels"]
-layout_mode = 2
-text = "Mood"
-
-[node name="HumanAge" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/AssignedHumans/Labels"]
-layout_mode = 2
-text = "Age"
-
-[node name="HumanHunger" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/AssignedHumans/Labels"]
-layout_mode = 2
-text = "Hunger"
-
-[node name="HumanEnergy" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/AssignedHumans/Labels"]
-layout_mode = 2
-text = "Energy"
-
-[node name="HumanHealth" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/AssignedHumans/Labels"]
-layout_mode = 2
-text = "Health"
-
-[node name="HumanSanity" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/AssignedHumans/Labels"]
-layout_mode = 2
-text = "Sanity
-"
-
-[node name="HumanInfo" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/AssignedHumans" instance=ExtResource("1_qr252")]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="HumanInfo2" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/AssignedHumans" instance=ExtResource("1_qr252")]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="HumanInfo3" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/AssignedHumans" instance=ExtResource("1_qr252")]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="HumanInfo4" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/AssignedHumans" instance=ExtResource("1_qr252")]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer"]
+[node name="MinionContainer" parent="Minions/TabContainer" instance=ExtResource("1_fyepd")]
 layout_mode = 2
 
-[node name="LogsContainer" type="PanelContainer" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(500, 200)
+[node name="MinionContainer2" parent="Minions/TabContainer" instance=ExtResource("1_fyepd")]
+visible = false
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer"]
+[node name="MinionContainer3" parent="Minions/TabContainer" instance=ExtResource("1_fyepd")]
+visible = false
 layout_mode = 2
-horizontal_scroll_mode = 0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer/ScrollContainer"]
-custom_minimum_size = Vector2(500, 2.08165e-12)
-layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="Label" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Jim felt sad when Jim felt sad when Jim hit Jim. This is a really long message"
-autowrap_mode = 2
-
-[node name="Label2" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Jim felt sad when Jim hit Jim"
-
-[node name="Label3" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Jim felt sad when Jim hit Jim"
-
-[node name="Label4" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Jim felt sad when Jim hit Jim"
-
-[node name="Label5" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Jim felt sad when Jim hit Jim"
-
-[node name="Label6" type="Label" parent="VBoxContainer/MinionContainer1/PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Jim felt sad when Jim hit Jim"
-
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MinionContainer1"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="VBoxContainer/MinionContainer1/CenterContainer"]
-layout_mode = 2
-text = "Transfer Human"

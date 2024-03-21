@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmfknmrrywcof"]
+[gd_scene load_steps=6 format=3 uid="uid://bmfknmrrywcof"]
 
-[ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_iky5h"]
-[ext_resource type="SpriteFrames" uid="uid://dcfi4jrvasy7f" path="res://Characters/Player/player_sprite_animations.tres" id="2_gfj3g"]
+[ext_resource type="Script" path="res://Characters/Human/human.gd" id="1_iky5h"]
+[ext_resource type="SpriteFrames" uid="uid://dcfi4jrvasy7f" path="res://Characters/Human/human_sprite_animations.tres" id="2_52tua"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tb7ox"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7xf6q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7khb"]
 bg_color = Color(0.380392, 0.32549, 0.74902, 0)
@@ -17,13 +19,24 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="Player" type="CharacterBody2D" groups=["Beings"]]
+[node name="Human" type="CharacterBody2D" groups=["Beings"]]
+y_sort_enabled = true
 collision_layer = 2
-collision_mask = 30
+collision_mask = 28
 platform_floor_layers = 4294962176
 script = ExtResource("1_iky5h")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(0, -13)
+sprite_frames = ExtResource("2_52tua")
+animation = &"walk_right"
+autoplay = "idle"
+frame_progress = 0.288459
+
 [node name="InteractorArea2D" type="Area2D" parent="."]
+position = Vector2(0, -13)
 collision_layer = 4
 collision_mask = 0
 
@@ -32,15 +45,8 @@ scale = Vector2(1.6, 1.6)
 shape = SubResource("RectangleShape2D_tb7ox")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_tb7ox")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-y_sort_enabled = true
-texture_filter = 1
-sprite_frames = ExtResource("2_gfj3g")
-animation = &"walk_right"
-autoplay = "idle"
-frame_progress = 0.288459
+scale = Vector2(1, 0.5)
+shape = SubResource("CircleShape2D_7xf6q")
 
 [node name="SelectionBox" type="Panel" parent="."]
 unique_name_in_owner = true
@@ -50,9 +56,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -20.0
+offset_top = -33.0
 offset_right = 20.0
-offset_bottom = 20.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -79,10 +85,11 @@ wait_time = 10.0
 
 [node name="HungerBar" type="ProgressBar" parent="CanvasLayer"]
 unique_name_in_owner = true
+y_sort_enabled = true
 offset_left = -25.0
-offset_top = -38.0
-offset_right = 26.0
-offset_bottom = -22.0
+offset_top = -45.0
+offset_right = 25.0
+offset_bottom = -35.0
 show_percentage = false
 
 [connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]

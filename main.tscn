@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://beq85xrl5rqg5"]
+[gd_scene load_steps=13 format=3 uid="uid://beq85xrl5rqg5"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_xrstn"]
-[ext_resource type="PackedScene" uid="uid://bmfknmrrywcof" path="res://Characters/Player/player.tscn" id="2_ueec3"]
+[ext_resource type="PackedScene" uid="uid://cack8rp7rdddq" path="res://UI/ui.tscn" id="2_m7uig"]
+[ext_resource type="PackedScene" uid="uid://bmfknmrrywcof" path="res://Characters/Human/human.tscn" id="2_ueec3"]
 [ext_resource type="PackedScene" uid="uid://wh2yqv3fg15q" path="res://Camera/camera.tscn" id="3_awls0"]
 [ext_resource type="Script" path="res://UI/UIRoot.gd" id="6_atil0"]
 [ext_resource type="PackedScene" uid="uid://bqn3nget0i00d" path="res://UI/Inventory/inventory_dialogue.tscn" id="6_hcjfl"]
@@ -24,7 +25,10 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [node name="Main" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_xrstn")
+
+[node name="UI" parent="." instance=ExtResource("2_m7uig")]
 
 [node name="UIRoot" type="CanvasLayer" parent="."]
 script = ExtResource("6_atil0")
@@ -68,15 +72,16 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_246gv")
 unique_name_in_owner = true
 
 [node name="Beings" type="Node2D" parent="."]
+y_sort_enabled = true
 
-[node name="Player" parent="Beings" instance=ExtResource("2_ueec3")]
+[node name="Human" parent="Beings" instance=ExtResource("2_ueec3")]
 unique_name_in_owner = true
 
-[node name="Player2" parent="Beings" instance=ExtResource("2_ueec3")]
+[node name="Human2" parent="Beings" instance=ExtResource("2_ueec3")]
 unique_name_in_owner = true
 position = Vector2(62, 120)
 
-[node name="Player3" parent="Beings" instance=ExtResource("2_ueec3")]
+[node name="Human3" parent="Beings" instance=ExtResource("2_ueec3")]
 unique_name_in_owner = true
 position = Vector2(31, -72)
 

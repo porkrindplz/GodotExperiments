@@ -1,0 +1,368 @@
+[gd_scene load_steps=7 format=3 uid="uid://cptmssfl4aw0q"]
+
+[ext_resource type="PackedScene" uid="uid://02jskmvf5pwn" path="res://UI/human_info.tscn" id="1_gidrw"]
+[ext_resource type="Theme" uid="uid://bib7fbpf0kuta" path="res://addons/DarkTheme/Dark.theme" id="1_xuevr"]
+[ext_resource type="StyleBox" uid="uid://cbt2s60qhtdip" path="res://UI/priority_theme.tres" id="3_sbr3i"]
+[ext_resource type="StyleBox" uid="uid://dvj2xyrccly1w" path="res://UI/work_theme.tres" id="4_qa5kj"]
+[ext_resource type="StyleBox" uid="uid://bo5a1egfrbm3k" path="res://UI/leisure_theme.tres" id="5_ulsjo"]
+[ext_resource type="StyleBox" uid="uid://ctjkwwwefj6tf" path="res://UI/rest_theme.tres" id="6_t5fnv"]
+
+[node name="MinionContainer" type="MarginContainer"]
+custom_minimum_size = Vector2(850, 610)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_xuevr")
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="OverviewContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="NameLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer"]
+layout_mode = 2
+text = "Minion"
+
+[node name="MoodLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer"]
+layout_mode = 2
+text = "Mood: Apathetic"
+
+[node name="PersonalityLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer"]
+layout_mode = 2
+text = "Personality:"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="PersonalityContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Test1Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer/VBoxContainer/HBoxContainer/PersonalityContainer"]
+layout_mode = 2
+text = "Violent"
+
+[node name="Test1Label2" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer/VBoxContainer/HBoxContainer/PersonalityContainer"]
+layout_mode = 2
+text = "Humourless"
+
+[node name="Test1Label3" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer/VBoxContainer/HBoxContainer/PersonalityContainer"]
+layout_mode = 2
+text = "Violent"
+
+[node name="Test1Label4" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer/VBoxContainer/HBoxContainer/PersonalityContainer"]
+layout_mode = 2
+text = "Violent"
+
+[node name="Test1Label5" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer/VBoxContainer/HBoxContainer/PersonalityContainer"]
+layout_mode = 2
+text = "Violent"
+
+[node name="SpecialtiesLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer"]
+layout_mode = 2
+text = "Speciality:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer/HBoxContainer"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="SpecialityLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/OverviewContainer/HBoxContainer"]
+layout_mode = 2
+text = "Security"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(650, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="AssignedHumans" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Labels" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/AssignedHumans"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="HumanName" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/AssignedHumans/Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="HumanMood" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/AssignedHumans/Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mood"
+
+[node name="HumanAge" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/AssignedHumans/Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Age"
+
+[node name="HumanHunger" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/AssignedHumans/Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hunger"
+
+[node name="HumanEnergy" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/AssignedHumans/Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Energy"
+
+[node name="HumanHealth" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/AssignedHumans/Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Health"
+
+[node name="HumanSanity" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/AssignedHumans/Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sanity
+"
+
+[node name="HumanInfo" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/AssignedHumans" instance=ExtResource("1_gidrw")]
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="HumanInfo2" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/AssignedHumans" instance=ExtResource("1_gidrw")]
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="HumanInfo3" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/AssignedHumans" instance=ExtResource("1_gidrw")]
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="HumanInfo4" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/AssignedHumans" instance=ExtResource("1_gidrw")]
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TransferButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Transfer Human"
+
+[node name="FeedButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Feed To Cthulu"
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 8.375)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LogsContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer/ScrollContainer"]
+custom_minimum_size = Vector2(500, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "Jim felt sad when Jim felt sad when Jim hit Jim. This is a really long message"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "Jim felt sad when Jim hit Jim"
+
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "Jim felt sad when Jim hit Jim"
+
+[node name="Label4" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "Jim felt sad when Jim hit Jim"
+
+[node name="Label5" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "Jim felt sad when Jim hit Jim"
+
+[node name="Label6" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/LogsContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "Jim felt sad when Jim hit Jim"
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="Priorities" type="GridContainer" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/Priorities"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Priorities"
+horizontal_alignment = 1
+
+[node name="Priority" type="OptionButton" parent="PanelContainer/VBoxContainer/HBoxContainer2/Priorities"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_sbr3i")
+
+[node name="Priority2" type="OptionButton" parent="PanelContainer/VBoxContainer/HBoxContainer2/Priorities"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_sbr3i")
+
+[node name="Priority3" type="OptionButton" parent="PanelContainer/VBoxContainer/HBoxContainer2/Priorities"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_sbr3i")
+
+[node name="Priority4" type="OptionButton" parent="PanelContainer/VBoxContainer/HBoxContainer2/Priorities"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_sbr3i")
+
+[node name="Priority5" type="OptionButton" parent="PanelContainer/VBoxContainer/HBoxContainer2/Priorities"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_sbr3i")
+
+[node name="Priority6" type="OptionButton" parent="PanelContainer/VBoxContainer/HBoxContainer2/Priorities"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_sbr3i")
+
+[node name="Priority7" type="OptionButton" parent="PanelContainer/VBoxContainer/HBoxContainer2/Priorities"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_sbr3i")
+
+[node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="Period" type="GridContainer" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/Period"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Activity Type"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/Period"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("4_qa5kj")
+text = "Work"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/Period"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("5_ulsjo")
+text = "Leisure"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/Period"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("4_qa5kj")
+text = "Work"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/Period"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("4_qa5kj")
+text = "Work"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/Period"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("5_ulsjo")
+text = "Leisure"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/Period"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("6_t5fnv")
+text = "Sleep"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/Period"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("6_t5fnv")
+text = "Sleep"
+horizontal_alignment = 1
+
+[node name="Period2" type="GridContainer" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer2/Period2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Period"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2

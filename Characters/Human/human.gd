@@ -10,7 +10,7 @@ var mouse_control = true
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
 # Stats
-var stats:HumanStats
+var stats: HumanStats
 
 # AI
 @onready var ai = $UtilityAIAgent
@@ -24,13 +24,13 @@ var follow_cursor = false
 
 #Pathfinding
 @onready var pathfinding = get_node("/root/Main/Pathfinding")
-var current_path:PackedVector2Array
+var current_path: PackedVector2Array
 var target_position
 
 func _ready():
-	stats.add_energy(0)
-	stats.add_hunger(0)
-	stats.add_sanity(0)
+	#stats.add_energy(0)
+	#stats.add_hunger(0)
+	#stats.add_sanity(0)
 	set_selected(selected)
 
 func set_selected(value):
@@ -41,10 +41,12 @@ func _input(event):
 	if event.is_action_pressed("SelectSecondary") and selected:
 		follow_cursor = true
 		target = get_global_mouse_position()
-		var path = pathfinding.get_path_between(position,target)
-		if path.is_empty()==false:
-			print(path)
-			current_path = path
+		#if tile at target is walkable
+		if pathfinding.is_walkable(target):
+			var path = pathfinding.get_path_between(position, target)
+			if path.is_empty() == false:
+				print(path)
+				current_path = path
 	if event.is_action_released("SelectSecondary") and selected:
 		follow_cursor = false
 
@@ -65,7 +67,7 @@ func _move():
 		var target_position = current_path[0]
 		var direction = position.direction_to(target_position)
 		velocity = direction * walk_speed
-		if position.distance_to(target_position)<1:
+		if position.distance_to(target_position) < 1:
 			current_path.remove_at(0)
 		animated_sprite_2d.animation = "walk_right"
 	else:
@@ -107,10 +109,8 @@ func handle_keyboard_control():
 	velocity = target_velocity
 	move_and_slide()
 
-
-
 func _on_sleep_timer_timeout():
-	stats.add_energy(-1)
+	stats.add_energy( - 1)
 
 func _on_hunger_timer_timeout():
 	stats.add_energy(1)
