@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://02jskmvf5pwn"]
+
+[ext_resource type="Script" path="res://UI/human_info.gd" id="1_aqax6"]
+
+[node name="HumanInfo" type="HBoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = -11.5
+offset_right = 187.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 30
+script = ExtResource("1_aqax6")
+
+[node name="HumanName" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Jim"
+
+[node name="HumanMood" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Sad"
+
+[node name="HumanAge" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "55"
+
+[node name="HumanHunger" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "OK"
+
+[node name="HumanEnergy" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Low"
+
+[node name="HumanHealth" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "80%"
+
+[node name="HumanSanity" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "50%
+"

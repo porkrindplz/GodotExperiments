@@ -75,6 +75,16 @@ wait_time = 2.0
 [node name="AgeTimer" type="Timer" parent="."]
 wait_time = 10.0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HungerBar" type="ProgressBar" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = -25.0
+offset_top = -38.0
+offset_right = 26.0
+offset_bottom = -22.0
+show_percentage = false
+
 [connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]
 [connection signal="timeout" from="SleepTimer" to="." method="_on_sleep_timer_timeout"]
 [connection signal="timeout" from="AgeTimer" to="." method="_on_age_timer_timeout"]

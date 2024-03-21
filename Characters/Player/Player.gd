@@ -10,15 +10,7 @@ var mouse_control = true
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
 # Stats
-@export var id:int = 0
-@export var human_name:String = "Succ. Chin. Meal"
-@export var age:int = 25
-@export var hunger:int = 10
-@export var energy:int = 75
-@export var health:int = 100
-
-# Stores a value between -100 and 100 for the opinions of each entity
-var relationships:Dictionary = {}
+var stats:HumanStats
 
 # AI
 @onready var ai = $UtilityAIAgent
@@ -36,6 +28,9 @@ var current_path:PackedVector2Array
 var target_position
 
 func _ready():
+	stats.add_energy(0)
+	stats.add_hunger(0)
+	stats.add_sanity(0)
 	set_selected(selected)
 
 func set_selected(value):
@@ -113,11 +108,12 @@ func handle_keyboard_control():
 	move_and_slide()
 
 
+
 func _on_sleep_timer_timeout():
-	energy = max(0, energy-1)
+	stats.add_energy(-1)
 
 func _on_hunger_timer_timeout():
-	hunger = max(0, hunger-1)
+	stats.add_energy(1)
 
 func _on_age_timer_timeout():
-	age += 1
+	stats.age += 1
